@@ -49,6 +49,7 @@ else:
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
+# CORS
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # To prevent 500 errors during login on a deployed site
