@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.contrib.messages import constants as messages
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -51,6 +51,9 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+# To prevent 500 errors during login on a deployed site
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -76,6 +79,14 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-info',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+}
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
