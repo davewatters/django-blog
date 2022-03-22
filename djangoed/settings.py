@@ -29,7 +29,7 @@ DEBUG = DEVELOPMENT
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 if DEVELOPMENT:
-    ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
+    ALLOWED_HOSTS = [ 'localhost' ]
 else:
     ALLOWED_HOSTS = [ os.environ.get('ALLOWED_HOSTS') ]
 
