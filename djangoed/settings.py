@@ -14,8 +14,8 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import dj_database_url
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 # SECURITY: Create a .env file in same dir as this file
 load_dotenv()
 
@@ -29,7 +29,7 @@ DEBUG = DEVELOPMENT
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 if DEVELOPMENT:
-    ALLOWED_HOSTS = [ 'localhost' ]
+    ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
 else:
     ALLOWED_HOSTS = [ os.environ.get('ALLOWED_HOSTS') ]
 
@@ -121,16 +121,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoed.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
